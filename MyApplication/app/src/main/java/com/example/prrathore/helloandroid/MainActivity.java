@@ -2,8 +2,11 @@ package com.example.prrathore.helloandroid;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.content.Intent;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -36,4 +39,12 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    /** Called when user clicks on Send Button */
+    public void sendMessage(View view) {
+        System.out.println("Hello there!!");
+        Intent intent = new Intent(this, DisplayMessageActivity.class);
+
+    }
+
 }
