@@ -24,6 +24,9 @@ public class DisplayMessageActivity extends ActionBarActivity {
 
         setContentView(textView);
 
+        // enable the app icon as the Up button by calling setDisplayHomeAsUpEnabled()
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     @Override
