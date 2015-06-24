@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class ActivityOne extends Activity {
 
@@ -30,9 +31,13 @@ public class ActivityOne extends Activity {
 	// You will need to increment these variables' values when their
 	// corresponding lifecycle methods get called.
 
+    private int mCreate, mRestart, mStart, mResume;
+
 	// TODO: Create variables for each of the TextViews
 	// named mTvCreate, mTvRestart, mTvStart, mTvResume.
 	// for displaying the current count of each counter variable
+
+    private int mTvCreate, mTvRestart, mTvStart, mTvResume;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +47,8 @@ public class ActivityOne extends Activity {
 		// TODO: Assign the appropriate TextViews to the TextView variables
 		// Hint: Access the TextView by calling Activity's findViewById()
 		// textView1 = (TextView) findViewById(R.id.textView1);
+
+        TextView textView1 = (TextView) findViewById(R.id.create);
 
 		Button launchActivityTwoButton = (Button) findViewById(R.id.bLaunchActivityTwo);
 		launchActivityTwoButton.setOnClickListener(new OnClickListener() {
