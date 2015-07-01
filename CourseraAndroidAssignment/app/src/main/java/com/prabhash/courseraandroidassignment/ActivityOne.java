@@ -20,7 +20,7 @@ public class ActivityOne extends Activity {
 	// String for LogCat documentation
 	private final static String TAG = "Lab-ActivityOne";
 
-    private final ActivityOne me = this;
+    private final ActivityOne me = this; // reference to current object tobe used inside an inner class
 
 	// Lifecycle counters
 
@@ -79,6 +79,10 @@ public class ActivityOne extends Activity {
 			// TODO:
 			// Restore value of counters from saved state
 			// Only need 4 lines of code, one for every count variable
+            mCreate = (int) savedInstanceState.get(START_KEY);
+            mRestart = (int) savedInstanceState.get(RESTART_KEY);
+            mStart = (int) savedInstanceState.get(START_KEY);
+            mResume = (int) savedInstanceState.get(RESUME_KEY);
 
 		}
 
