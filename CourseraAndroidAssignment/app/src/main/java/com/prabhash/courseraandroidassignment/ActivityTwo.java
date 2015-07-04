@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class ActivityTwo extends Activity {
 
@@ -33,10 +34,12 @@ public class ActivityTwo extends Activity {
     private int mRestart;
     private int mStart;
     private int mResume;
-    
+
 	// TODO: Create variables for each of the TextViews
 	// named  mTvCreate, mTvRestart, mTvStart, mTvResume.
 	// for displaying the current count of each counter variable
+
+    private TextView mTvCreate, mTvRestart, mTvStart, mTvResume;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +50,10 @@ public class ActivityTwo extends Activity {
 		// Hint: Access the TextView by calling Activity's findViewById()
 		// textView1 = (TextView) findViewById(R.id.textView1);
 
-
-		
-		
-		
+        mTvCreate = (TextView) findViewById(R.id.create);
+        mTvRestart = (TextView) findViewById(R.id.restart);
+        mTvResume = (TextView) findViewById(R.id.resume);
+        mTvStart = (TextView) findViewById(R.id.start);
 		
 		Button closeButton = (Button) findViewById(R.id.bClose); 
 		closeButton.setOnClickListener(new OnClickListener() {
@@ -62,8 +65,8 @@ public class ActivityTwo extends Activity {
 				// This function closes Activity Two
 				// Hint: use Context's finish() method
 
-				
-			
+                finish();
+
 			}
 		});
 
@@ -74,11 +77,11 @@ public class ActivityTwo extends Activity {
 			// Restore value of counters from saved state
 			// Only need 4 lines of code, one for every count variable
 
+            mCreate = (int) savedInstanceState.get(CREATE_KEY);
+            mRestart = (int) savedInstanceState.get(RESTART_KEY);
+            mStart = (int) savedInstanceState.get(START_KEY);
+            mResume = (int) savedInstanceState.get(RESUME_KEY);
 
-			
-			
-			
-			
 		}
 
 		// Emit LogCat message
@@ -87,9 +90,8 @@ public class ActivityTwo extends Activity {
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface via the displayCounts() method
-
-
-		
+        mCreate++;
+        displayCounts();
 		
 	}
 
@@ -106,7 +108,8 @@ public class ActivityTwo extends Activity {
 		// Update the appropriate count variable
 		// Update the user interface
 
-
+        mStart++;
+        displayCounts();
 		
 		
 	}
@@ -122,6 +125,8 @@ public class ActivityTwo extends Activity {
 		// Update the appropriate count variable
 		// Update the user interface
 
+        mResume++;
+        displayCounts();
 
 	
 	}
@@ -153,8 +158,8 @@ public class ActivityTwo extends Activity {
 		// Update the appropriate count variable
 		// Update the user interface
 
-
-	
+        mRestart++;
+        displayCounts();
 	
 	}
 
@@ -173,12 +178,11 @@ public class ActivityTwo extends Activity {
 		// Save counter state information with a collection of key-value pairs
 		// 4 lines of code, one for every count variable
 
+        savedInstanceState.putInt(CREATE_KEY, mCreate);
+        savedInstanceState.putInt(RESTART_KEY, mRestart);
+        savedInstanceState.putInt(RESUME_KEY, mResume);
+        savedInstanceState.putInt(START_KEY, mStart);
 
-
-		
-		
-		
-		
 	}
 
 	// Updates the displayed counters
@@ -188,12 +192,12 @@ public class ActivityTwo extends Activity {
 	public void displayCounts() {
 
 		// TODO - uncomment these lines
-	/*
+
 		mTvCreate.setText("onCreate() calls: " + mCreate);
 		mTvStart.setText("onStart() calls: " + mStart);
 		mTvResume.setText("onResume() calls: " + mResume);
 		mTvRestart.setText("onRestart() calls: " + mRestart);
-	*/
+
 	
 	}
 }
