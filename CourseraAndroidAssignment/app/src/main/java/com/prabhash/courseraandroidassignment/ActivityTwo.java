@@ -28,6 +28,8 @@ public class ActivityTwo extends Activity {
 	
 	// You will need to increment these variables' values when their
 	// corresponding lifecycle methods get called.
+
+    private int mCreate;
 	
 
 	
