@@ -30,10 +30,10 @@ public class ActivityTwo extends Activity {
 	// corresponding lifecycle methods get called.
 
     private int mCreate;
-	
-
-	
-	
+    private int mRestart;
+    private int mStart;
+    private int mResume;
+    
 	// TODO: Create variables for each of the TextViews
 	// named  mTvCreate, mTvRestart, mTvStart, mTvResume.
 	// for displaying the current count of each counter variable
