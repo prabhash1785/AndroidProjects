@@ -20,8 +20,6 @@ public class ActivityOne extends Activity {
 	// String for LogCat documentation
 	private final static String TAG = "Lab-ActivityOne";
 
-    private final ActivityOne me = this; // reference to current object tobe used inside an inner class
-
 	// Lifecycle counters
 
 	// TODO:
@@ -66,7 +64,7 @@ public class ActivityOne extends Activity {
 
 				// Create an intent stating which Activity you would like to
 				// start
-				Intent intent = new Intent(me, ActivityTwo.class);
+				Intent intent = new Intent(ActivityOne.this, ActivityTwo.class);
 
                 startActivity(intent);
 
